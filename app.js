@@ -4,12 +4,15 @@ var http = require('http').Server(app);
 var port = process.env.PORT || 3000;
 var mongo = require('./mongo');
 var assert = require('assert');
+var config = require('./config');
+var path = require('path');
 app.use(express.static(__dirname));
 
+
 require("fs").symlink(
-  __dirname + "/Users/johncarlson/Downloads/www.web3d.org/x3d/content/examples"
-, __dirname + "examples"
-, function (err) { console.log(err || "Done."); }
+path.resolve(config.folder),
+path.resolve(__dirname + "/" + config.webfolder),
+ function (err) { console.log(err || "Done."); }
 );
 
 // connect to mongo
