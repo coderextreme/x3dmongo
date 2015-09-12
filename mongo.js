@@ -44,7 +44,6 @@ function convertUrls(object, parentkey, file) {
 			      if (object[key].indexOf("http") < 0) {
 				       object[key] = '/'+file.substring(0, file.lastIndexOf('/')+1)+object[key];
 			       }
-			       console.log('filepath',file.substring(0, file.lastIndexOf('/')+1));
 			       console.log(object[key]);
 			}
 		}
@@ -55,7 +54,12 @@ module.exports.insertDocuments = function(db, callback) {
 		var collection = db.collection(config.collection);
 
 		var finder = require('findit')(config.folder);
-		finder.on('file', function(file) {
+		finder.on('error', function(err) {
+			if (err.code === 'EACCES') {
+				console.log('Cannot access', err.path)
+			}
+		});
+		finder.on('file', function(file, err) {
 			if (file.indexOf('.json') < 0) {
 				return; // if not .json, continue
 			}
