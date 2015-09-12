@@ -11,7 +11,7 @@ To install
 npm install
 ```
 
-To load database, unpack a zip from http://www.web3d.org/x3d/content/examples/X3dResources.html#examples or http://x3dgraphics.com/examples/X3dForWebAuthors/ , edit config.js to point to location of unpacked folders (www.web3d.org/x3d/content/examples is good), then
+To load database, unpack a zip from http://www.web3d.org/x3d/content/examples/X3dResources.html#examples or http://x3dgraphics.com/examples/X3dForWebAuthors/ , edit config.js to point to location of unpacked folder (www.web3d.org/x3d/content/examples is good), then
 
 ```
 npm run load
