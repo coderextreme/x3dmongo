@@ -12,7 +12,12 @@ app.use(express.static(__dirname));
 require("fs").symlink(
 path.resolve(config.folder),
 path.resolve(__dirname + "/" + config.webfolder),
- function (err) { console.log(err || "Done."); }
+'file',
+ function (err) {
+	if (err) {
+		console.log( err.code === 'EEXIST' ? "Go to the link above!\n" : err);
+	}
+  }
 );
 
 // connect to mongo
@@ -37,5 +42,5 @@ app.get('/', function(req, res, err) {
 });
 
 http.listen(port, function () {
-    console.log('listening on *:' + port);
+    console.log('listening on http://localhost:' + port);
 });
