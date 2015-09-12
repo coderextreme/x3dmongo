@@ -6,6 +6,12 @@ var mongo = require('./mongo');
 var assert = require('assert');
 app.use(express.static(__dirname));
 
+require("fs").symlink(
+  __dirname + "/Users/johncarlson/Downloads/www.web3d.org/x3d/content/examples"
+, __dirname + "examples"
+, function (err) { console.log(err || "Done."); }
+);
+
 // connect to mongo
 var MongoClient = require('mongodb').MongoClient;
 
