@@ -23,4 +23,4 @@ To run web server,
 npm run start
 ```
 
-Then go to localhost:3000
+Then go to http://localhost:3000
