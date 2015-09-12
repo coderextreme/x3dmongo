@@ -2,7 +2,7 @@
 X3D JSON files loaded into Mongo and displayed on web
 
 Requirements:
-* mongodb running at localhost:27017
+* mongodb running at localhost:27017 (default)
 * express
 * findit
     
