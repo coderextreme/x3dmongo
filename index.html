@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<title>JSON Loader</title>
+<link rel='stylesheet' type='text/css' href='http://www.x3dom.org/x3dom/release/x3dom.css'></link>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom-full.js'></script>
+<script language='Javascript' src='http://code.jquery.com/jquery-1.11.1.js'></script>
+<script type='text/javascript' src='X3DJSONLD.js'></script>
+</head>
+<body>
+</body>
+<script type='text/javascript'>
+	var body = document.querySelector('body');
+	var table = document.createElement('table');
+	body.appendChild(table);
+	$.getJSON('http://localhost:3000/x3d', null, function(docs) {
+		$.each(docs, function(i, doc) {
+			var info = {
+				file: doc.X3D.head[0].meta['@content'],
+				id: 'id'+doc._id,
+				x3d: doc.X3D};
+			console.log(info.x3d);
+			var tr = document.createElement('tr');
+			table.appendChild(tr);
+			var td = document.createElement('td');
+			tr.appendChild(td);
+			var file = document.createTextNode(info.file);
+			td.appendChild(file);
+
+			td = document.createElement('td');
+			tr.appendChild(td);
+			var x3d = document.createElement('x3d');
+			x3d.setAttribute('width','250');
+			x3d.setAttribute('height','125');
+			x3d.setAttribute('id', info.id);
+			td.appendChild(x3d);
+			loadX3DJS('#' + info.id, info.x3d);
+		});
+	})
+</script>
+</html>

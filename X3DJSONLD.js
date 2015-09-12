@@ -93,6 +93,10 @@ function loadX3DJS(selector, json) {
 		console.log("selector found nothing in document", selector);
 	} else {
 		ConvertToX3DOM(json, "", "", element);
+		var scene = element.querySelector('scene');
+		document._bindableBag = new x3dom.BindableBag(scene);
+		document._bindableBag.setRefNode(scene);
+		x3dom.reload();
 	}
 }
 
