@@ -1,4 +1,4 @@
-var mongo = require('./mongo');
+var mongo = require('./mongobase');
 var assert = require('assert');
 
 // connect to mongo

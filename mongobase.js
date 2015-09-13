@@ -63,6 +63,9 @@ module.exports.insertDocuments = function(db, callback) {
 			if (file.indexOf('.json') < 0) {
 				return; // if not .json, continue
 			}
+			if (file.indexOf('Chapter02') < 0 && file.indexOf('KelpTank.json') < 0 && file.indexOf('KelpForestMain.json') < 0) {
+				return;
+			}
 			var data = fs.readFileSync(file);
 			try {
 				var x3d = JSON.parse(data);
