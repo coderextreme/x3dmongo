@@ -12,7 +12,7 @@ app.use(express.static(__dirname));
 require("fs").symlink(
 path.resolve(config.folder),
 path.resolve(__dirname + "/" + config.webfolder),
-'file',
+'junction',
  function (err) {
 	if (err) {
 		console.log( err.code === 'EEXIST' ? "Go to the link above!\n" : err);
