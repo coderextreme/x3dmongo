@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "d3-layout-orbit": "^1.0.1",
-    "express": "~4.9.0",
+    "express": "^4.17.1",
     "findit": "^2.0.0",
-    "mongodb": "^2.0.42"
+    "mongodb": ">=3.1.13"
   },
   "scripts": {
     "start": "node app.js",
