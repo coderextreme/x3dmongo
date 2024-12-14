@@ -1,12 +1,12 @@
 {
   "name": "x3dmongo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
-    "d3-layout-orbit": "^1.0.1",
-    "express": "^4.17.1",
-    "findit": "^2.0.0",
-    "mongodb": ">=3.1.13"
+    "d3-layout-orbit": "*",
+    "express": "*",
+    "findit": "*",
+    "mongodb": "*"
   },
   "scripts": {
     "start": "node app.js",
