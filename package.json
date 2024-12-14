@@ -6,7 +6,13 @@
     "d3-layout-orbit": "*",
     "express": "*",
     "findit": "*",
-    "mongodb": "*"
+    "mongodb": "*",
+    "d3-color": "3.1.0"
+  },
+  "overrides": {
+    "d3-layout-orbit": {
+      "d3-color": "$d3-color"
+    }
   },
   "scripts": {
     "start": "node app.js",
