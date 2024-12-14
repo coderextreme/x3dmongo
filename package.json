@@ -1,6 +1,6 @@
 {
   "name": "x3dmongo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "d3-layout-orbit": "*",
@@ -11,7 +11,7 @@
   },
   "overrides": {
     "d3-layout-orbit": {
-      "d3-color": "$d3-color"
+      "d3-color": "3.1.0"
     }
   },
   "scripts": {
