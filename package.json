@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "d3-layout-orbit": "*",
-    "express": "*",
+    "express": "5.2.1",
     "findit": "*",
     "mongodb": "*",
     "d3-color": "3.1.0",
